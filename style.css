@@ -1,0 +1,49 @@
+/* Accesibilidad: Foco visible */
+:focus {
+    outline: 3px solid #556b2f;
+    outline-offset: 2px;
+}
+
+/* Áreas de clic mínimas */
+input, select, button, a {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Ocultar carritos vacíos */
+.hidden-cart {
+    display: none;
+}
+
+/* Estilo Instagram: Efecto Zoom */
+.img-zoom:hover img {
+    transform: scale(1.05);
+}
+
+/* Animación de entrada */
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botón Lupa */
+.lupa-btn {
+    background: rgba(255, 255, 255, 0.95);
+    color: #2d1b10;
+    transition: all 0.2s ease-in-out;
+}
+
+.lupa-btn:hover {
+    background: #ffffff;
+    transform: scale(1.1);
+    color: #556b2f;
+}
+
+/* Optimización para móviles en Modal */
+#image-modal.flex {
+    display: flex;
+}

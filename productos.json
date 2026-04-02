@@ -1,0 +1,55 @@
+{
+  "stockHoy": [
+    {
+      "id": 1,
+      "nombre": "Panes de Leche",
+      "precio": 1500,
+      "img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80",
+      "disponible": true
+    },
+    {
+      "id": 2,
+      "nombre": "Facturas Variadas",
+      "precio": 4500,
+      "img": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80",
+      "disponible": true
+    },
+    {
+      "id": 3,
+      "nombre": "Bizcochos (1/4kg)",
+      "precio": 900,
+      "img": "https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=800&q=80",
+      "disponible": true
+    },
+    {
+      "id": 4,
+      "nombre": "Paletas Choco",
+      "precio": 1200,
+      "img": "https://images.unsplash.com/photo-1511381939415-e44015466834?w=800&q=80",
+      "disponible": true
+    }
+  ],
+  "paraEncargar": [
+    {
+      "id": 101,
+      "nombre": "Huevo Tableta XL",
+      "precio": 8500,
+      "img": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=800&q=80",
+      "disponible": true
+    },
+    {
+      "id": 102,
+      "nombre": "Pastafrola Membrillo",
+      "precio": 4500,
+      "img": "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=800&q=80",
+      "disponible": true
+    },
+    {
+      "id": 103,
+      "nombre": "Maicenas x12",
+      "precio": 3200,
+      "img": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80",
+      "disponible": true
+    }
+  ]
+}

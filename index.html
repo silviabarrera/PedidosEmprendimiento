@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulzuras El Balcón - Pastelería Artesanal</title>
+    
+    <!-- Librerías Externas -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Configuración de Tailwind (Necesario en el HTML para el CDN) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bakery-brown': '#4a3728',
+                        'bakery-chocolate': '#2d1b10',
+                        'bakery-beige': '#f5f5dc',
+                        'bakery-cream': '#fffaf0',
+                        'bakery-olive': '#556b2f',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Archivo de Estilos Personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-bakery-cream font-sans text-bakery-chocolate leading-relaxed">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-bakery-olive text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="font-serif text-lg md:text-2xl tracking-tight">Dulzuras El Balcón</h1>
+            <a href="https://wa.me/5493885187505?text=Hola,%20quiero%20hacer%20un%20pedido" 
+               target="_blank"
+               class="bg-white text-bakery-olive px-4 py-2 rounded-full text-[10px] md:text-xs font-bold hover:bg-bakery-beige transition-all flex items-center gap-2 shadow-lg"
+               aria-label="Abrir chat de WhatsApp">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.417-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.305 1.652zm6.599-3.835c1.78.943 3.181 1.44 5.3 1.44 5.454 0 9.894-4.44 9.897-9.896.001-2.641-1.03-5.124-2.898-6.992-1.868-1.868-4.351-2.898-6.995-2.899-5.455 0-9.894 4.44-9.897 9.895-.001 2.13.565 3.518 1.488 5.112l-.995 3.637 3.708-.972zm11.722-5.441c-.302-.151-1.782-.88-2.057-.981-.275-.1-.475-.151-.675.151-.2.301-.775.981-.95 1.18-.175.2-.35.225-.65.075-.301-.151-1.27-.468-2.42-1.494-.894-.797-1.496-1.781-1.672-2.081-.176-.301-.019-.463.131-.612.135-.134.301-.351.451-.526.15-.175.2-.301.3-.501.1-.2.05-.375-.025-.526-.075-.151-.675-1.628-.925-2.229-.244-.582-.493-.503-.675-.512-.174-.008-.375-.01-.575-.01-.2 0-.526.075-.801.375-.275.301-1.051 1.027-1.051 2.504 0 1.477 1.075 2.903 1.225 3.102.15.2 2.115 3.227 5.125 4.525.715.309 1.274.494 1.708.632.719.228 1.373.196 1.891.118.577-.089 1.782-.728 2.032-1.43.25-.702.25-1.303.175-1.43-.075-.127-.275-.201-.575-.351z"/></svg>
+                PEDIR POR WHATSAPP
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="relative h-48 bg-cover bg-center flex items-center justify-center text-center px-4" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1000&q=80');">
+        <div class="text-white">
+            <h2 class="text-3xl font-serif mb-1">Dulzuras El Balcón</h2>
+            <p class="text-sm font-light italic">Alto Comedero, Jujuy</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+        
+        <!-- SECCIÓN 1: STOCK HOY -->
+        <section id="seccion-stock" class="mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <h2 class="text-2xl font-serif uppercase tracking-widest border-b-4 border-orange-500">¡Salidos del Horno!</h2>
+                <span class="bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-full animate-pulse">STOCK HOY</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8" id="grid-stock">
+                <!-- Se cargan por JS -->
+            </div>
+
+            <!-- Pedido Stock -->
+            <div id="container-pedido-stock" class="hidden-cart bg-white p-6 rounded-3xl shadow-xl border-2 border-bakery-olive/20 animate-fadeIn">
+                <h3 class="text-xl font-serif mb-4 text-bakery-olive">🛒 Mi Pedido de Hoy</h3>
+                <div id="lista-pedido-stock" class="space-y-3 mb-6"></div>
+                <form id="form-stock" class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t pt-6">
+                    <div class="col-span-1 md:col-span-2">
+                        <label for="name-stock" class="block text-xs font-bold mb-1 uppercase">Nombre Completo</label>
+                        <input type="text" id="name-stock" required class="w-full bg-bakery-cream border rounded-xl px-4 py-3">
+                    </div>
+                    <div>
+                        <label for="pay-stock" class="block text-xs font-bold mb-1 uppercase">Forma de Pago</label>
+                        <select id="pay-stock" class="w-full bg-bakery-cream border rounded-xl px-4 py-3">
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Transferencia">Transferencia</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="address-stock" class="block text-xs font-bold mb-1 uppercase">Dirección de Entrega</label>
+                        <input type="text" id="address-stock" required class="w-full bg-bakery-cream border rounded-xl px-4 py-3 autocomplete" placeholder="Barrio y Calle">
+                    </div>
+                    <div class="col-span-1 md:col-span-2 text-right">
+                        <p class="text-2xl font-bold mb-4">Total: <span id="total-stock">$0</span></p>
+                        <button type="button" onclick="enviarWhatsApp('stock')" class="w-full bg-green-600 text-white px-10 py-4 rounded-2xl font-bold shadow-lg">CONFIRMAR PEDIDO</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: ENCARGOS -->
+        <section id="seccion-encargo" class="mb-16">
+            <div class="mb-6">
+                <h2 class="text-2xl font-serif uppercase tracking-widest border-b-4 border-bakery-olive inline-block">Para Encargar</h2>
+                <p class="text-xs italic text-bakery-olive mt-1">⚠️ Mínimo 2 días de anticipación.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" id="grid-encargo">
+                <!-- Se cargan por JS -->
+            </div>
+
+            <!-- Pedido Encargo -->
+            <div id="container-pedido-encargo" class="hidden-cart bg-bakery-beige p-6 rounded-3xl shadow-xl border-2 border-bakery-brown/20 animate-fadeIn">
+                <h3 class="text-xl font-serif mb-4 text-bakery-brown">📅 Mi Pedido para Encargar</h3>
+                <div id="lista-pedido-encargo" class="space-y-3 mb-6"></div>
+                <form id="form-encargo" class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-bakery-brown/20 pt-6">
+                    <div>
+                        <label for="name-encargo" class="block text-xs font-bold mb-1 uppercase">Nombre Completo</label>
+                        <input type="text" id="name-encargo" required class="w-full bg-white border rounded-xl px-4 py-3">
+                    </div>
+                    <div>
+                        <label for="date-encargo" class="block text-xs font-bold mb-1 uppercase">Día de Entrega</label>
+                        <input type="date" id="date-encargo" required class="w-full bg-white border rounded-xl px-4 py-3">
+                    </div>
+                    <div>
+                        <label for="pay-encargo" class="block text-xs font-bold mb-1 uppercase">Forma de Pago</label>
+                        <select id="pay-encargo" class="w-full bg-white border rounded-xl px-4 py-3">
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Transferencia">Transferencia</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="address-encargo" class="block text-xs font-bold mb-1 uppercase">Dirección de Entrega</label>
+                        <input type="text" id="address-encargo" required class="w-full bg-white border rounded-xl px-4 py-3 autocomplete" placeholder="Barrio y Calle">
+                    </div>
+                    <div class="col-span-1 md:col-span-2 text-right">
+                        <p class="text-2xl font-bold mb-4 text-bakery-brown">Total: <span id="total-encargo">$0</span></p>
+                        <button type="button" onclick="enviarWhatsApp('encargo')" class="w-full bg-bakery-brown text-white px-10 py-4 rounded-2xl font-bold">CONFIRMAR ENCARGO</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Zoom -->
+    <div id="image-modal" role="dialog" aria-modal="true" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4">
+        <button onclick="closeZoom()" id="close-modal-btn" class="absolute top-6 right-6 text-white bg-bakery-olive w-12 h-12 rounded-full flex items-center justify-center shadow-2xl z-[110]" aria-label="Cerrar imagen">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <div class="max-w-4xl w-full h-full flex items-center justify-center">
+            <img id="modal-img" src="" alt="Vista ampliada" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+        </div>
+    </div>
+
+    <footer class="bg-bakery-chocolate text-bakery-cream py-10 px-4 text-center">
+        <h3 class="font-serif text-2xl mb-2">Dulzuras El Balcón</h3>
+        <p class="text-xs opacity-60">Barrio El Balcón, Jujuy</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <!-- Google Maps API (Reemplaza TU_API_KEY) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY_AQUI&libraries=places&callback=initAutocomplete" async defer></script>
+</body>
+</html>
